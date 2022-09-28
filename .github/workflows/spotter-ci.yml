@@ -12,3 +12,16 @@ jobs:
         env:
           SPOTTER_USERNAME: ${{ secrets.SPOTTER_USERNAME }}
           SPOTTER_PASSWORD: ${{ secrets.SPOTTER_PASSWORD }}
+
+      - name: Scan Ansible content with different inputs
+        uses: xlab-steampunk/spotter-action@cli-dockerfile-updates
+        with:
+          paths: playbook.yaml
+          project_id: ${{ secrets.SPOTTER_PROJECT_ID }}
+          upload_values: true
+          upload_metadata: true
+          display_level: error
+          ansible_version: 2.13
+        env:
+          SPOTTER_USERNAME: ${{ secrets.SPOTTER_USERNAME }}
+          SPOTTER_PASSWORD: ${{ secrets.SPOTTER_PASSWORD }}
