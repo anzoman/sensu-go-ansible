@@ -14,7 +14,7 @@ jobs:
           SPOTTER_PASSWORD: ${{ secrets.SPOTTER_PASSWORD }}
 
       - name: Scan Ansible content with different inputs
-        uses: xlab-steampunk/spotter-action@cli-dockerfile-updates
+        uses: xlab-steampunk/spotter-action@master
         with:
           paths: playbook.yaml
           project_id: ${{ secrets.SPOTTER_PROJECT_ID }}
